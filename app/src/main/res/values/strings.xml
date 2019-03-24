@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">secureMessaging</string>
+    <string name="sign_up">sign up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">log in</string>
+    <string name="forgot_password"><u>forgot password ?</u></string>
+    <string name="settings">settings</string>
+    <string name="help">Help</string>
+    <string name="starred">Starred</string>
 </resources>
