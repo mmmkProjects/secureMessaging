@@ -31,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
     public void listOfMessages(View view) {
         i = new Intent(this,listOfmessages.class);
         startActivity(i);
+
     }
 }
