@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "313215477697",
+    "firebase_url": "https://messaging-be6a0.firebaseio.com",
+    "project_id": "messaging-be6a0",
+    "storage_bucket": "messaging-be6a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313215477697:android:d094ac9615de565f",
+        "android_client_info": {
+          "package_name": "com.example.securemessaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313215477697-2qnkslg1btf32il5d2dstauf6l48k53p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmlNlwDBBGYqm0RJxjs-MXBU9nmvsU8Sw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

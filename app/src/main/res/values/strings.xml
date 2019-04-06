@@ -9,6 +9,8 @@
     <string name="help">Help</string>
     <string name="starred">Starred</string>
     <string name="logout">Logout</string>
+    <string name="retype_password">Retype password</string>
+    <string name="remember_me">Remember Me</string>
     <string-array name="names_of_users">
         <item>Mahesh Joseph Sadashiv</item>
         <item>Madhuri N</item>

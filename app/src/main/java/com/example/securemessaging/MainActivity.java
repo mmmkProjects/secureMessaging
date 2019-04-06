@@ -1,6 +1,8 @@
 package com.example.securemessaging;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -39,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
         img.startAnimation(anim);
         forgot_pass = (Button)findViewById(R.id.forgot_password);
         forgot_pass.setPaintFlags(forgot_pass.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);//underlining the text
+        SharedPreferences mySharedpreferences = getSharedPreferences("loginDetails", Context.MODE_PRIVATE);//for remember
+        String userR = mySharedpreferences.getString("email","");
+        String passR = mySharedpreferences.getString("password","");
+        user = (EditText)findViewById(R.id.username);
+        pass = (EditText)findViewById(R.id.password);
+        user.setText(userR);
+        pass.setText(passR);
+
     }
     @Override
     public void onStart() {
@@ -55,8 +66,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+
                             FirebaseUser user = mAuth.getCurrentUser();
                             Log.d("Logged-in", "signInWithEmail:success");
+                            checkBox();
                             i = new Intent(MainActivity.this,listOfmessages.class);
                             startActivity(i);
 
@@ -83,5 +96,24 @@ public class MainActivity extends AppCompatActivity {
         }
         else
             signIn(userNameString,passwordString);
+    }
+
+    public void checkBox() {
+        CheckBox cb = (CheckBox)findViewById(R.id.remember_me);
+        if(cb.isChecked())
+        {
+            user = (EditText)findViewById(R.id.username);
+            pass = (EditText)findViewById(R.id.password);
+            SharedPreferences mySharedpreferences = getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = mySharedpreferences.edit();
+            editor.putString("email",user.getText().toString());
+            editor.putString("password",pass.getText().toString());
+            editor.commit();
+        }
+    }
+
+    public void signup(View view) {
+        i = new Intent(MainActivity.this,signup.class);
+        startActivity(i);
     }
 }
